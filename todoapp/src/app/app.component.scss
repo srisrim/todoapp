@@ -1,0 +1,25 @@
+::ng-deep {
+  .list-group {
+    max-height: 276px;
+    overflow: auto;
+    .list-group-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &__todo-item {
+        display: flex;
+      }
+      &__action {
+        .btn {
+          margin-right: 10px;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+      &.appHighlight {
+        border-color: red;
+      }
+    }
+  }
+}
