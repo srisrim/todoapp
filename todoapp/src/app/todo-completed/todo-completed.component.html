@@ -1,0 +1,23 @@
+<div class="col-sm-6" style="margin-top: 2%;" *ngIf="completedTodos.length">
+  <h2 class="title">Completed Todos</h2>
+  <ul class="list-group todo-list">
+    <li class="list-group-item" *ngFor="let todo of completedTodos">
+      <span class="list-group-item__todo-item">
+        <input type="checkbox" (change)="onChangeCheckbox(todo)" />
+        {{ todo.todo.task }}
+      </span>
+      <span class="list-group-item__action">
+        <button
+          class="btn btn-primary btn-warning btn-remove-todo"
+          (click)="onClickRepeatTodo(todo)">
+          Repeat
+        </button>
+        <button
+          class="btn btn-primary btn-danger btn-remove-todo"
+          (click)="onClickRemoveCompleted(todo)">
+          X
+        </button>
+      </span>
+    </li>
+  </ul>
+</div>

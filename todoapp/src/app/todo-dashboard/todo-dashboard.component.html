@@ -1,0 +1,66 @@
+<div class="container" style="margin-top: 10%;">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+        <div class="row">
+          <div class="col-sm-2">
+            <label>Create a Todo</label>
+          </div>
+          <div class="col-sm-10">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Add your todo..."
+                name="task"
+                [(ngModel)]="task"
+              />
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="submit"><strong>+</strong></button>
+                <button *ngIf="selectedTodos.length"
+                  class="btn btn-primary btn-danger"
+                  (click)="onClickDeleteAllSelected()">
+                  Delete Selected
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="alert alert-danger" *ngIf="error" style="margin-top: 2%;">
+          {{ message }}
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-8 col-sm-offset-2" style="margin-top: 1%;">
+      <p class="alert alert-success" *ngIf="todos.length === 0">
+        You're all done for the day. Have fun!
+      </p>
+    </div>
+    <div class="col-sm-6" style="margin-top: 2%;" *ngIf="todos.length">
+      <h2 class="title">Todo List</h2>
+      <ul class="list-group todo-list">
+        <li class="list-group-item" *ngFor="let todo of todos" appHighlight>
+          <span class="list-group-item__todo-item">
+            <input type="checkbox" name="" (change)="onChangeCheckbox(todo)"/>
+            {{ todo.todo.task }}
+          </span>
+          <span class="list-group-item__action">
+            <button
+              class="btn btn-primary btn-success btn-remove-todo"
+              (click)="onCompleted(todo)"
+            >
+              Done
+            </button>
+            <button
+              class="btn btn-primary btn-danger btn-remove-todo"
+              (click)="onClickRemoveTodo(todo)"
+            >
+              X
+            </button>
+          </span>
+        </li>
+      </ul>
+    </div>
+    <app-todo-completed></app-todo-completed>
+  </div>
+</div>
