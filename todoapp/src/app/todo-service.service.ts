@@ -7,6 +7,8 @@ import { Observable, Subject } from "rxjs";
 export class TodoServiceService {
   constructor() {}
 
+  sub$ = new Subject();
+
   todos = [];
   todos$ = new Subject<any>();
 
@@ -15,6 +17,10 @@ export class TodoServiceService {
 
   selectedTodos = [];
   selectedTodos$ = new Subject<any>();
+
+  checkSub() {
+    this.sub$.next(Math.random());
+  }
 
   removeTodo(todo) {
     this.todos.splice(this.todos.indexOf(todo), 1);

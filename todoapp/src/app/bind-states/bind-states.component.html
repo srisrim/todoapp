@@ -1,0 +1,21 @@
+<p>bind-states works!</p>
+
+<div><span (click)="onUpdateCount()">{{count}}</span></div>
+
+<label>Country:</label> 
+<select  (change)="onSelect($event.target.value)">
+  <option value="0">--Select--</option>
+  <option *ngFor="let country of country" [value]="country.id">
+      {{country.countryName}}
+  </option>
+</select>
+
+<hr>
+
+<label>Country:</label> 
+<select >
+  <option value="0">--Select--</option>
+  <option *ngFor="let state of state" [value]="state.id">
+      {{state.stateName}}
+  </option>
+</select>

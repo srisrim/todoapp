@@ -9,6 +9,8 @@ import { TodoCompletedComponent } from './todo-completed/todo-completed.componen
 import { HighlightDirective } from './directives/highlight.directive';
 import { StockStatusComponent } from './stock-status/stock-status.component';
 import { DecimalpipeComponent } from './pipe/decimalpipe/decimalpipe.component';
+import { LazylaoutComponent } from './lazylaout/lazylaout.component';
+import { BindStatesComponent } from './bind-states/bind-states.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { DecimalpipeComponent } from './pipe/decimalpipe/decimalpipe.component';
     TodoCompletedComponent,
     HighlightDirective,
     StockStatusComponent,
-    DecimalpipeComponent
+    DecimalpipeComponent,
+    LazylaoutComponent,
+    BindStatesComponent
   ],
   imports: [
     BrowserModule,
