@@ -1,3 +1,9 @@
+<div class="container">
+  <nav class="nav navbar navbar-default">
+    <button [routerLink]="['/lazylayout']" routerLinkActive="router-link-active" > Lazy Load</button>
+  </nav>
+</div>
+<app-bind-states (updateCount)="onChangeCount($event)"></app-bind-states>
 <div class="container" style="margin-top: 10%;">
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
@@ -62,5 +68,33 @@
       </ul>
     </div>
     <app-todo-completed></app-todo-completed>
+
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+        <th scope="col">Price</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Action column</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{product.id}}</td>
+        <td>{{product.title}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.stock}}</td>
+        <td>
+          <app-stock-status
+            [stockCount]="product.stock"
+            [productId]="product.id"
+            (stockChange)="updateStock($event)"
+          ></app-stock-status>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
   </div>
 </div>

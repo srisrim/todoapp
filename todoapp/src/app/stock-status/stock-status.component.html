@@ -1,0 +1,8 @@
+<div class="action-column">
+  <input type="text" class="form-control" [(ngModel)]="stockValue" />
+  <button (click)="stockUpdate()"
+          class="btn-primary"
+          [disabled]="stockValue == null"
+          [ngClass]="{'btn-success': stockCount > 10, 'btn-danger': stockCount < 10, 'btn-disabled': stockValue == null}"> Add Stock
+  </button>
+</div>

@@ -7,13 +7,21 @@ import { TodoDashboardComponent } from './todo-dashboard/todo-dashboard.componen
 import { FormsModule } from '@angular/forms';
 import { TodoCompletedComponent } from './todo-completed/todo-completed.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { StockStatusComponent } from './stock-status/stock-status.component';
+import { DecimalpipeComponent } from './pipe/decimalpipe/decimalpipe.component';
+import { LazylaoutComponent } from './lazylaout/lazylaout.component';
+import { BindStatesComponent } from './bind-states/bind-states.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoDashboardComponent,
     TodoCompletedComponent,
-    HighlightDirective
+    HighlightDirective,
+    StockStatusComponent,
+    DecimalpipeComponent,
+    LazylaoutComponent,
+    BindStatesComponent
   ],
   imports: [
     BrowserModule,
